@@ -6,7 +6,6 @@ default="\e[0m"
 echo -e "Install some ${cyan}dependencies ${default}to the script, and ${cyan}update the systems packages and repositories${default}"
 yes | sudo pacman -Syu gum git --needed
 
-
 clear -x
 
 dot_packages=(
@@ -111,27 +110,29 @@ sudo pacman -S "${dot_packages[@]}" ${fish} ${filemanager} ${nvim} --needed
 
 while IFS= read -r selection; do
   case "$selection" in
-    "Hyprland Dotfiles (recommended)")
-      dotfiles_cfg
-      ;;
-    "Waybar configuration (recommended)")
-      waybar_cfg
-      ;;
-    "Friendly interactive shell with pure (recommended)")
-      fish_cfg
-      ;;
-    "Arch User Repository helper (package manager, recommended)")
-      aur_helper
-      ;;
-    "powerlevel10k shell")
-      p10k_cfg
-      ;;
-    "LazyVim text editor")
-      nvim_cfg
-      ;;
-    *)
-      echo "Unknown selection: $selection"
-      ;;
+  "Hyprland Dotfiles (recommended)")
+    dotfiles_cfg
+    ;;
+  "Waybar configuration (recommended)")
+    waybar_cfg
+    ;;
+  "Friendly interactive shell with pure (recommended)")
+    fish_cfg
+    ;;
+  "Arch User Repository helper (package manager, recommended)")
+    aur_helper
+    ;;
+  "powerlevel10k shell")
+    p10k_cfg
+    ;;
+  "LazyVim text editor")
+    nvim_cfg
+    ;;
+  *)
+    echo "Unknown selection: $selection"
+    ;;
   esac
-done <<< "$selection"
+done <<<"$selection"
 
+gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "$(gum style --foreground 212 'Installation completed!') If you installed any shells
+we recommend that you $(gum style --foreground 212 'chsh -s /usr/bin/fish'), or $(gum style --foreground 212 'chsh -s /usr/bin/zsh')."
