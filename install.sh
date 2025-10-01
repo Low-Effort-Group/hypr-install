@@ -54,7 +54,7 @@ waybar_cfg() {
 
 fish_cfg() {
   gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "Installing fish pure"
-  fish -c fisher install pure-fish/pure
+  fish -c "fisher install pure-fish/pure"
   clear -x
 }
 
