@@ -10,6 +10,7 @@ clear -x
 
 dot_packages=(
   rofi-wayland
+  hyprland
   swww
   qt5-wayland
   qt6-wayland
@@ -24,6 +25,8 @@ dot_packages=(
   ttf-jetbrains-mono-nerd
   brightnessctl
   bc
+  swaync
+  notify-send
   pipewire
   wireplumber
   pipewire-pulse
